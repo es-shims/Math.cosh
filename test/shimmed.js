@@ -25,7 +25,7 @@ test('shimmed', function (t) {
 		et.end();
 	});
 
-	t.match(keys(Math.cosh).sort().join('|'), /^length|name(|prototype)?$/, 'has no unexpected own keys');
+	t.match(keys(Math.cosh).sort().join('|'), /^(arguments\|caller\|)?length|name(\|prototype)?$/, 'has no unexpected own keys');
 
 	runTests(Math.cosh, t);
 
