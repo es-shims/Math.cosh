@@ -16,9 +16,9 @@ test('named exports', async (t) => {
 	);
 
 	const { shim, getPolyfill, implementation } = coshModule;
-	t.equal(await import('math.cosh/shim'), shim, 'shim named export matches deep export');
-	t.equal(await import('math.cosh/implementation'), implementation, 'implementation named export matches deep export');
-	t.equal(await import('math.cosh/polyfill'), getPolyfill, 'getPolyfill named export matches deep export');
+	t.equal((await import('math.cosh/shim')).default, shim, 'shim named export matches deep export');
+	t.equal((await import('math.cosh/implementation')).default, implementation, 'implementation named export matches deep export');
+	t.equal((await import('math.cosh/polyfill')).default, getPolyfill, 'getPolyfill named export matches deep export');
 
 	t.end();
 });
